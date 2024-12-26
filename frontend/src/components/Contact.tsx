@@ -20,7 +20,8 @@ export default function Contact() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/contact', formData);
+      // Updated the backend URL to the hosted one
+      const response = await axios.post('https://internship51-1.onrender.com/api/contact', formData);
       setStatusMessage(response.data.message || 'Message sent successfully!');
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
